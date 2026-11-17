@@ -22,6 +22,7 @@ Le dossier `05-Livrables/J2_Retail_Intelligence/` contient :
 - UC-03 : environnement Hadoop/HDFS, inventaire des sources, arborescence du Data Lake, depot et controles de stockage ;
 - UC-04 : flux NiFi `GetFile -> PutHDFS`, configuration, execution, provenance, erreurs et corrections ;
 - partie complementaire : approfondissements sur les blocs HDFS, la convention de nommage, l'integrite, la supervision et la reprise ;
+- partie avancee AV-04 : controles avant ingestion avec routage des fichiers valides vers HDFS et des fichiers invalides vers le dossier error ;
 - fichiers PDF finaux et captures de preuves.
 
 ## Demarrage du Jour 2
@@ -50,6 +51,23 @@ Verification UC-04 :
 docker exec retail-uc03-hdfs hdfs dfs -ls -h /retail-lake/raw/nifi
 docker exec retail-uc03-hdfs hdfs dfs -cat /retail-lake/raw/nifi/promotion.dat | Select-Object -First 3
 ```
+
+## Controle avance AV-04
+
+Le flux NiFi applique deux controles avant le depot :
+
+- extension `.dat` ;
+- taille strictement superieure a zero.
+
+Le flux est organise ainsi :
+
+```text
+GetFile -> RouteOnAttribute
+             |-- matched -> PutHDFS
+             |-- unmatched -> PutFile
+```
+
+Les fichiers non conformes sont places dans `/data/nifi/error`. Les preuves comprennent la configuration des expressions, un depot valide dans HDFS et le rejet de `test.txt`.
 
 Arret :
 
