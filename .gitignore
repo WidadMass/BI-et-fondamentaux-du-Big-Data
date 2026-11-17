@@ -11,6 +11,13 @@
 /*.mjs
 *.inspect.ndjson
 
+# Supports pédagogiques locaux non livrés
+/01-Cours/
+/02-TP/
+
+# Versions Word de travail remplacées par les PDF validés
+/05-Livrables/J2_Retail_Intelligence/**/*.docx
+
 # Fichiers temporaires courants
 ~$*
 *.tmp
