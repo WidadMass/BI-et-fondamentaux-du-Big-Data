@@ -1,0 +1,35 @@
+﻿zone;table;rows;expected_columns;min_fields;max_fields;field_count_mismatches;empty_cells;key_status
+data;customer;99000;18;18;18;0;333;Candidate testée : aucune valeur vide ni doublon
+data;customer_address;49500;13;13;13;0;74;Candidate testée : aucune valeur vide ni doublon
+data;customer_demographics;1920800;9;9;9;0;4022;Candidate testée : aucune valeur vide ni doublon
+data;date_dim;109573;28;28;28;0;0;Candidate testée : aucune valeur vide ni doublon
+data;household_demographics;7200;5;5;5;0;7;Candidate testée : aucune valeur vide ni doublon
+data;income_band;20;3;3;3;0;0;Candidate testée : aucune valeur vide ni doublon
+data;inventory;23255100;4;4;4;0;5999;Candidate documentaire - unicité non testée sur tout le fichier
+data;item;17820;22;22;22;0;17838;Candidate testée : aucune valeur vide ni doublon
+data;item_marketprices;89100;6;6;6;0;59;Candidate testée : aucune valeur vide ni doublon
+data;product_reviews;89991;8;8;8;0;5;Candidate testée : aucune valeur vide ni doublon
+data;promotion;300;19;19;19;0;1;Candidate testée : aucune valeur vide ni doublon
+data;reason;35;3;3;3;0;0;Candidate testée : aucune valeur vide ni doublon
+data;ship_mode;20;6;6;6;0;0;Candidate testée : aucune valeur vide ni doublon
+data;store;12;29;29;29;0;12;Candidate testée : aucune valeur vide ni doublon
+data;store_returns;37902;20;20;20;0;89;Candidate testée : 0 vide(s), 158 doublon(s)
+data;store_sales;667579;23;23;23;0;1139;Candidate testée : 0 vide(s), 4136 doublon(s)
+data;time_dim;86400;10;10;10;0;50400;Candidate testée : aucune valeur vide ni doublon
+data;warehouse;5;14;14;14;0;0;Candidate testée : aucune valeur vide ni doublon
+data;web_clickstreams;6770550;6;6;6;0;8956123;Non définie
+data;web_page;60;14;14;14;0;60;Candidate testée : aucune valeur vide ni doublon
+data;web_returns;38487;24;24;24;0;271;Candidate testée : 0 vide(s), 150 doublon(s)
+data;web_sales;668052;34;34;34;0;3021;Candidate testée : 0 vide(s), 4076 doublon(s)
+data;web_site;30;26;26;26;0;30;Candidate testée : aucune valeur vide ni doublon
+data_refresh;customer;1000;18;18;18;0;0;Candidate documentaire - unicité non testée sur tout le fichier
+data_refresh;customer_address;500;13;13;13;0;0;Candidate documentaire - unicité non testée sur tout le fichier
+data_refresh;inventory;234900;4;4;4;0;63;Candidate documentaire - unicité non testée sur tout le fichier
+data_refresh;item;180;22;22;22;0;180;Candidate documentaire - unicité non testée sur tout le fichier
+data_refresh;item_marketprices;900;6;6;6;0;0;Candidate documentaire - unicité non testée sur tout le fichier
+data_refresh;product_reviews;909;8;8;8;0;0;Candidate documentaire - unicité non testée sur tout le fichier
+data_refresh;store_returns;426;20;20;20;0;0;Candidate documentaire - unicité non testée sur tout le fichier
+data_refresh;store_sales;6632;23;23;23;0;40;Candidate documentaire - unicité non testée sur tout le fichier
+data_refresh;web_clickstreams;68988;6;6;6;0;91278;Non définie
+data_refresh;web_returns;400;24;24;24;0;0;Candidate documentaire - unicité non testée sur tout le fichier
+data_refresh;web_sales;6879;34;34;34;0;56;Candidate documentaire - unicité non testée sur tout le fichier

@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-16",
+  "statut": "Architecture proposée au Jour 1, non déployée",
+  "architecture_retenue": "Data Lake zoné Bronze Silver Gold avec marts décisionnels en Gold",
+  "mode_traitement": "Batch",
+  "justification_batch": "Les sources sont des fichiers fournis par lots et aucun besoin temps réel n'est démontré",
+  "sources_uc01": {
+    "fichiers_principaux": 23,
+    "lignes_principales": 33907536,
+    "octets_principaux": 1024447801,
+    "fichiers_refresh": 11,
+    "lignes_refresh": 321714
+  },
+  "choix": {
+    "bronze": "Fichiers DAT originaux immuables et manifests",
+    "silver": "Parquet typé, contrôlé, harmonisé et refresh intégré",
+    "gold": "Faits, dimensions, agrégats et KPI validés",
+    "lakehouse": "Évolution facultative, Delta Lake non obligatoire",
+    "azure": "Transposition logique ADLS Gen2, étude Jour 4"
+  },
+  "points_a_valider": [
+    "Règle de calcul du montant des ventes",
+    "Rapprochement temporel ventes-retours",
+    "Règles d'intégration du refresh par table",
+    "Relation entre wcs_sales_sk et les ventes web",
+    "Politique de conservation et droits détaillés"
+  ]
+}

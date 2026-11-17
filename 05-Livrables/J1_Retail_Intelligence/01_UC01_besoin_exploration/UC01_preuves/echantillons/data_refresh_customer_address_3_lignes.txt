@@ -1,0 +1,3 @@
+49500|AAAAAAAAAAAACVFW|575|Pine|Pkwy|JcbRPPJch|Decatur|Meade County|KS|70585|United States|-6|condo
+49501|AAAAAAAAAAAACVFX|29|Lakeview Ash|Boulevard|zNSxKw|Barnes|Kerr County|TX|86749|United States|-6|single family
+49502|AAAAAAAAAAAACVFY|115|8th 6th|Blvd|FEzf4gqvu|Millville|Lincoln County|MS|40558|United States|-6|condo

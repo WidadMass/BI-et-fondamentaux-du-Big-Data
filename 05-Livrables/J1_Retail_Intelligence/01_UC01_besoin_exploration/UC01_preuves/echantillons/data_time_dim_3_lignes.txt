@@ -1,0 +1,3 @@
+0|AAAAAAAAAAAAAAAA|0|0|0|0|AM|third|night|
+1|AAAAAAAAAAAAAAAB|1|0|0|1|AM|third|night|
+2|AAAAAAAAAAAAAAAC|2|0|0|2|AM|third|night|

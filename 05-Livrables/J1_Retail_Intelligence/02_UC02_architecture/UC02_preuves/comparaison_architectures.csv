@@ -1,0 +1,9 @@
+﻿Critère;Data Warehouse;Data Lake zoné;Data Lakehouse
+Principe;Données structurées intégrées dans un modèle décisionnel;Conservation centralisée des sources puis préparation en zones;Data Lake avec gestion de tables et fonctions transactionnelles
+Schéma;Défini avant chargement (schema-on-write);Souple à l'entrée, contrôlé en Silver;Schéma contrôlé au niveau des tables
+Formats adaptés;Tables relationnelles structurées;DAT, CSV, JSON, Parquet et autres fichiers;Parquet avec format de table compatible
+Avantages;KPI cohérents, requêtes BI simples, gouvernance mature;Conserve l'original, accepte la diversité, évolutif;Transactions, versions, mises à jour et fiabilité accrues
+Limites;Moins souple pour les sources évolutives et volumineuses;Risque de Data Swamp sans règles strictes;Mise en œuvre et exploitation plus complexes
+Qualité;Contrôlée avant chargement;Progressive entre Bronze, Silver et Gold;Contraintes et contrôles au niveau des tables
+Usages Retail;Reporting et marts de ventes;Historisation, exploration, transformations et preuves;Évolutions fréquentes, upserts et historique de tables
+Pertinence;Utile pour la couche Gold;Meilleur socle pour le parcours et les fichiers fournis;Évolution possible, non obligatoire au Jour 1

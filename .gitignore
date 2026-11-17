@@ -1,0 +1,19 @@
+# Donnees Retail brutes et archive volumineuse
+/retail_project/
+/03-DataSet_Source-de-donnees/retail_project.zip
+/03-DataSet_Source-de-données/retail_project.zip
+
+# Fichiers de travail et sorties regenerables
+/tmp/
+/output/
+/_outils_locaux/
+/*.py
+/*.mjs
+*.inspect.ndjson
+
+# Fichiers temporaires courants
+~$*
+*.tmp
+*.log
+.DS_Store
+Thumbs.db

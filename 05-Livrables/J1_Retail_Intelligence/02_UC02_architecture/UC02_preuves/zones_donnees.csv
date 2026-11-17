@@ -1,0 +1,4 @@
+﻿Zone;Entrées;Transformations;Contrôles de sortie;Format;Conservation
+Bronze / Raw;Copie des fichiers data et data_refresh;Ajout de métadonnées techniques uniquement;Checksum, taille, nom, nombre de lignes et de champs;DAT d'origine + manifest;Immuable, sans écrasement
+Silver;Bronze validé;Typage, renommage, normalisation, refresh, identifiant de ligne, rejets;Complétude, validité, doublons, intégrité, volumes;Parquet;Historisée par lot
+Gold;Silver conforme;Faits, dimensions, agrégats et règles KPI validées;Réconciliation des volumes et indicateurs;Parquet et tables analytiques;Selon besoins de restitution

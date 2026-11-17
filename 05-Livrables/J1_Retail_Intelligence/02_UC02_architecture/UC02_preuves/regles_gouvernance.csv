@@ -1,0 +1,10 @@
+﻿Domaine;Règle minimale;Preuve;Responsable proposé
+Provenance;Conserver chemin, fichier, lot, horodatage et checksum;Manifest d'ingestion;Équipe Data
+Catalogue;Décrire table, colonne, type, grain, clé et usage;Dictionnaire de données;Équipe Data + métier
+Qualité;Exécuter complétude, validité, unicité, intégrité, volume et fraîcheur;Rapport par lot;Équipe Data
+Lignage;Tracer source, transformations, zone et jeu Gold;Journal de traitement;Équipe Data
+Accès;Accorder le minimum nécessaire par rôle et par zone;Matrice des droits;Administrateur plateforme
+Protection;Limiter l'exposition des attributs clients et des données sensibles;Règles de masquage et d'accès;Métier + sécurité
+Conservation;Définir durée, archivage et purge par zone;Politique de conservation;Responsable Data
+Reprise;Isoler les rejets, corriger et rejouer avec un id de lot;Journal d'erreur et preuve de rejeu;Équipe Data
+Coûts et volumes;Suivre stockage, croissance, calcul et quotas;Tableau de suivi;Responsable plateforme

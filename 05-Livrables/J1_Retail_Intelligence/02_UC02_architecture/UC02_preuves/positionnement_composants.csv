@@ -1,0 +1,13 @@
+﻿Composant;Statut pédagogique;Rôle proposé;État réel au Jour 1;Étape
+Linux / Ubuntu;Obligatoire;Environnement local de référence;Cible définie, non déployée dans UC-02;Suite du parcours
+Python;Obligatoire;Exploration, contrôles et traitements de repli;Utilisé pour l'exploration UC-01;J1 puis continu
+Hadoop / HDFS;Obligatoire;Stockage distribué des zones locales;Architecture proposée seulement;J2 UC-03
+Apache NiFi;Obligatoire;Ingestion, orchestration, provenance et erreurs;Flux conçu, non déployé;J2 UC-04
+Spark / PySpark;Obligatoire;Transformations distribuées et agrégations;Traitements proposés, non exécutés;J3 UC-06
+Parquet;Format de référence;Silver et Gold colonnaires;Choisi pour les sorties analytiques;J3 UC-06
+ADLS Gen2;Objectif obligatoire;Déclinaison cloud des zones;Conception logique;J4 UC-07
+Azure Data Factory;Présentation / étude;Orchestration cloud;Positionnement logique seulement;J4 UC-07
+Azure Synapse;Présentation / étude;Spark et exposition analytique;Positionnement logique seulement;J4 UC-07
+HBase;Facultatif;Approfondissement NoSQL;Non retenu pour le socle;J3 UC-05 facultatif
+Delta Lake;Facultatif;Évolution Lakehouse;Non retenu pour le socle;Approfondissement
+PDGF;Selon kit;Génération éventuelle;Non nécessaire : données déjà disponibles;Non requis

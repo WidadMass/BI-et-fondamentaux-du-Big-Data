@@ -1,0 +1,12 @@
+﻿Besoin;Architecture locale;Cible Azure;Point de contrôle
+Stockage zoné;HDFS : /bronze, /silver, /gold, /rejects;ADLS Gen2 avec HNS et conteneurs ou répertoires par zone;Nommage, séparation et conservation
+Ingestion;NiFi ou script Python documenté;Azure Data Factory étudié pour l'orchestration;Provenance, erreurs et rejeu
+Traitements;Python puis Spark / PySpark;Spark dans l'environnement analytique Azure étudié;Même logique de typage et de qualité
+Formats;DAT en Bronze, Parquet en Silver et Gold;Même organisation dans ADLS Gen2;Compatibilité et partitionnement
+Restitution;Fichiers Gold, Python et outil BI;Synapse et services BI étudiés;Accès aux seuls jeux publiés
+Identités;Comptes et groupes Linux / Hadoop;Identités Azure et rôles adaptés;Pas de compte partagé
+Autorisations;Permissions HDFS par zone;RBAC au niveau des ressources et ACL sur l'arborescence;Moindre privilège
+Secrets;Variables protégées, fichiers hors dépôt;Service de secrets géré à prévoir;Aucun secret dans le code
+Supervision;Logs NiFi, scripts et Spark;Journaux d'exécution et métriques Azure;Alertes et conservation des preuves
+Coûts;Matériel, disque et temps d'administration;Stockage, opérations, calcul, quotas et budget;Estimation avant déploiement
+Statut;Cible du parcours local, mise en œuvre à venir;Simulation logique au Jour 1, étude au Jour 4;Ne pas présenter comme déployé

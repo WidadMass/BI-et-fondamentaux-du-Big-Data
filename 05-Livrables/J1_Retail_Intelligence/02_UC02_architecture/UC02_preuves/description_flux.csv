@@ -1,0 +1,8 @@
+﻿Flux;Source;Entrée;Ingestion;Destination;Contrôles;Transformation;Résultat / consommateur
+Référentiels;customer, item, store, warehouse, dates;DAT batch;NiFi ou Python;Bronze puis Silver;Schéma, clé, vides, doublons;Typage et intégration du refresh;Dimensions Silver/Gold / équipe Data
+Ventes magasin;store_sales;DAT batch;NiFi ou Python;Bronze puis Silver;23 champs, volumes, relations;Identifiant de ligne, types et Parquet;fact_sales_store / BI
+Ventes web;web_sales;DAT batch;NiFi ou Python;Bronze puis Silver;34 champs, volumes, relations;Identifiant de ligne, types et Parquet;fact_sales_web / BI
+Retours;store_returns, web_returns;DAT batch;NiFi ou Python;Bronze puis Silver;Grain, quantités, motifs, dates;Rapprochement contrôlé avec ventes;fact_returns / qualité et gestion
+Stocks;inventory;DAT batch;NiFi ou Python;Bronze puis Silver;4 champs, date-item-entrepôt;Refresh item avant contrôle d'intégrité;fact_inventory / stocks
+Web et avis;web_clickstreams, product_reviews;DAT batch;NiFi ou Python;Bronze puis Silver;Vides attendus, schéma et volume;Identifiant technique, texte conservé;Jeux exploratoires / analystes
+Publication;Silver conforme;Parquet;Spark / PySpark;Gold;Réconciliation, règles KPI;Jointures, agrégats, faits/dimensions;Marts, KPI, tableaux de bord

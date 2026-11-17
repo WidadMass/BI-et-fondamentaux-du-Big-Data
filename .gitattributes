@@ -1,0 +1,10 @@
+* text=auto
+
+# Documents et medias : ne jamais convertir les fins de ligne
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.xlsx binary
+*.xls binary
+*.zip binary

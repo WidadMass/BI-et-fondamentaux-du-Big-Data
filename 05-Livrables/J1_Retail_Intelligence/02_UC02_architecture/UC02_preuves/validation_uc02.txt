@@ -1,0 +1,11 @@
+Checklist UC-02
+
+[OK] Sources issues de l'inventaire UC-01
+[OK] Data Warehouse, Data Lake et Lakehouse comparés
+[OK] Sources, ingestion, Bronze, Silver, Gold et restitution représentés
+[OK] Flux batch et traitement des erreurs décrits
+[OK] Composants positionnés selon leur statut pédagogique
+[OK] HBase et Delta Lake conservés comme facultatifs
+[OK] Gouvernance, qualité, accès, sécurité et coûts pris en compte
+[OK] Architecture locale et cible Azure comparées
+[OK] Conception distinguée d'un déploiement réel
