@@ -1,0 +1,53 @@
+services:
+  hdfs:
+    build:
+      context: ./docker/uc03-hdfs
+    container_name: retail-uc03-hdfs
+    hostname: hdfs
+    user: "0:0"
+    ports:
+      - "9870:9870"
+      - "9000:9000"
+      - "8443:8443"
+    volumes:
+      - uc03_hdfs_data:/data
+      - ./retail_project/data:/input:ro
+    restart: unless-stopped
+
+  nifi:
+    image: apache/nifi:1.28.1
+    container_name: retail-uc04-nifi
+    network_mode: "service:hdfs"
+    depends_on:
+      hdfs:
+        condition: service_started
+    environment:
+      AUTH: single-user
+      SINGLE_USER_CREDENTIALS_USERNAME: admin
+      SINGLE_USER_CREDENTIALS_PASSWORD: RetailUC04Admin123!
+      NIFI_WEB_HTTPS_PORT: 8443
+      NIFI_WEB_PROXY_HOST: localhost:8443
+    volumes:
+      - ./docker/nifi/input:/data/nifi/input
+      - ./docker/nifi/archive:/data/nifi/archive
+      - ./docker/nifi/error:/data/nifi/error
+      - nifi_conf:/opt/nifi/nifi-current/conf
+      - nifi_state:/opt/nifi/nifi-current/state
+      - nifi_flowfile_repo:/opt/nifi/nifi-current/flowfile_repository
+      - nifi_content_repo:/opt/nifi/nifi-current/content_repository
+      - nifi_provenance_repo:/opt/nifi/nifi-current/provenance_repository
+      - nifi_database:/opt/nifi/nifi-current/database_repository
+      - nifi_logs:/opt/nifi/nifi-current/logs
+      - ./docker/uc03-hdfs/core-site.xml:/opt/nifi/nifi-current/conf/hadoop/core-site.xml:ro
+      - ./docker/uc03-hdfs/hdfs-site.xml:/opt/nifi/nifi-current/conf/hadoop/hdfs-site.xml:ro
+    restart: unless-stopped
+
+volumes:
+  nifi_conf:
+  nifi_state:
+  nifi_flowfile_repo:
+  nifi_content_repo:
+  nifi_provenance_repo:
+  nifi_database:
+  nifi_logs:
+  uc03_hdfs_data:
