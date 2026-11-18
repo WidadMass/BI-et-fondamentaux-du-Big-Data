@@ -1,0 +1,5 @@
+{"metric":"silver_duplicate_rows","value":0}
+{"metric":"candidate_key_duplicates","value":0}
+{"metric":"silver_parquet_rows","value":300}
+{"metric":"gold_parquet_rows","value":9}
+{"metric":"silver_schema_fields","value":19}

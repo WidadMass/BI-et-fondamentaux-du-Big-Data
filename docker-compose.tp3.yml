@@ -1,0 +1,25 @@
+services:
+  spark-uc06:
+    build:
+      context: .
+      dockerfile: docker/tp3/Dockerfile
+    image: retail-uc06-spark-jupyter:4.3.0
+    container_name: retail-uc06-spark
+    working_dir: /opt/project
+    command:
+      - jupyter
+      - lab
+      - --ip=0.0.0.0
+      - --port=8888
+      - --no-browser
+      - --ServerApp.token=uc06-retail
+      - --ServerApp.allow_remote_access=True
+      - --ServerApp.root_dir=/opt/project
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./retail_project/data:/opt/project/input:ro
+      - ./05-Livrables/J3_Retail_Intelligence/06_UC06/transformations:/opt/project/scripts:ro
+      - ./05-Livrables/J3_Retail_Intelligence/06_UC06/tests:/opt/project/tests:ro
+      - ./05-Livrables/J3_Retail_Intelligence/06_UC06/notebooks:/opt/project/notebooks
+      - ./05-Livrables/J3_Retail_Intelligence/06_UC06:/opt/project/output
