@@ -23,7 +23,10 @@ Le dossier `05-Livrables/J2_Retail_Intelligence/` contient :
 - UC-04 : flux NiFi `GetFile -> PutHDFS`, configuration, execution, provenance, erreurs et corrections ;
 - partie complementaire : approfondissements sur les blocs HDFS, la convention de nommage, l'integrite, la supervision et la reprise ;
 - partie avancee AV-04 : controles avant ingestion avec routage des fichiers valides vers HDFS et des fichiers invalides vers le dossier error ;
+- questions de recul, ecart de version NiFi et gestion des erreurs integres directement dans les livrables UC-03 et UC-04 ;
 - fichiers PDF finaux et captures de preuves.
+
+Les livrables UC-03 et UC-04 integrent les reponses aux questions de recul et documentent l'ecart entre la version NiFi demandee (2.12.0) et la version observee dans les captures (1.28.1). La preuve finale doit encore comporter une relation `failure` geree et un evenement de provenance `SEND` montrant le transit vers HDFS.
 
 ## Demarrage du Jour 2
 
