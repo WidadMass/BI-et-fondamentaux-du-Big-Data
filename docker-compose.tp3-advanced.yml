@@ -1,0 +1,15 @@
+name: retail-tp3-advanced
+
+services:
+  delta-advanced:
+    image: deltaio/delta-docker:4.3.1
+    container_name: retail-advanced-delta
+    working_dir: /opt/spark/work-dir
+    environment:
+      JUPYTER_TOKEN: delta-retail
+    ports:
+      - "8889:8888"
+    volumes:
+      - ./05-Livrables/J3_Retail_Intelligence/06_UC06/data/silver:/opt/project/input/silver:ro
+      - ./05-Livrables/J3_Retail_Intelligence/07_Advanced_Lakehouse:/opt/project/output
+

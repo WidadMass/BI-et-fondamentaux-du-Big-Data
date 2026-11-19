@@ -40,6 +40,14 @@ Le dossier `05-Livrables/J3_Retail_Intelligence/06_UC06/` contient :
 - une sortie Gold agregee en Parquet (`data/gold/promotion_summary`) ;
 - les controles de qualite (`quality/promotion_quality`).
 
+Le dossier `05-Livrables/J3_Retail_Intelligence/07_Advanced_Lakehouse/` contient :
+
+- une comparaison de Parquet, Delta Lake, Iceberg et Hudi ;
+- une architecture Lakehouse et une strategie incrementale ;
+- une demonstration Delta Lake 4.3.1 avec Spark 4.1.1 ;
+- une evolution de schema controlee avec `mergeSchema` ;
+- deux versions de table, un time travel vers la version 0 et le journal `_delta_log`.
+
 ## Demarrage du Jour 3 avec Docker
 
 Depuis la racine du depot :
@@ -54,6 +62,17 @@ docker exec retail-uc06-spark /opt/spark/bin/spark-submit --master local[2] /opt
 JupyterLab UC-06 : `http://localhost:8888/lab?token=uc06-retail`.
 
 Le conteneur `retail-uc06-spark` est independant des conteneurs HDFS et NiFi du Jour 2. Il monte les donnees brutes en lecture seule et ecrit les resultats UC-06 dans `05-Livrables/J3_Retail_Intelligence/06_UC06/`.
+
+## Partie avancee Delta Lake
+
+Cette partie utilise un second conteneur afin de conserver intact l'environnement UC-06 obligatoire :
+
+```powershell
+docker compose -f .\docker-compose.tp3-advanced.yml up -d
+docker exec retail-advanced-delta bash -lc '/opt/spark/bin/spark-submit --packages io.delta:delta-spark_4.1_2.13:4.3.1 --conf spark.driver.extraJavaOptions="-Divy.cache.dir=/tmp -Divy.home=/tmp" --conf spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension --conf spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog /opt/project/output/transformations/delta_demo.py'
+```
+
+JupyterLab Delta : `http://localhost:8889/lab?token=delta-retail`.
 
 ## Demarrage du Jour 2
 
@@ -108,3 +127,15 @@ docker compose -f .\docker-compose.uc03.yml stop
 ## Jeu de donnees
 
 Le projet utilise le jeu de donnees `retail_project`, inspire du benchmark TPCx-BB. Les donnees brutes et leur archive ne sont pas versionnees en raison de leur volume. Les inventaires, controles et echantillons necessaires a la justification du travail sont fournis dans les dossiers de preuves de l'UC-01.
+
+## TP4 - UC08 et UC07
+
+Le dossier `05-Livrables/J4_Retail_Intelligence/` contient le notebook d'analyse, les sorties CSV, les deux visualisations, l'analyse métier et la proposition d'architecture Azure/ADLS Gen2. UC08 réutilise les sorties Silver/Gold de l'UC06 dans le conteneur `retail-uc06-spark`, enrichi avec Pandas et Matplotlib.
+
+Reproduction :
+
+```powershell
+docker compose -f .\docker-compose.tp3.yml build spark-uc06
+docker compose -f .\docker-compose.tp3.yml up -d spark-uc06
+docker exec retail-uc06-spark /opt/spark/bin/spark-submit --master local[2] /opt/project/tp4/scripts/tp4_uc08.py
+```
