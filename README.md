@@ -128,14 +128,3 @@ docker compose -f .\docker-compose.uc03.yml stop
 
 Le projet utilise le jeu de donnees `retail_project`, inspire du benchmark TPCx-BB. Les donnees brutes et leur archive ne sont pas versionnees en raison de leur volume. Les inventaires, controles et echantillons necessaires a la justification du travail sont fournis dans les dossiers de preuves de l'UC-01.
 
-## TP4 - UC08 et UC07
-
-Le dossier `05-Livrables/J4_Retail_Intelligence/` contient le notebook d'analyse, les sorties CSV, les deux visualisations, l'analyse métier et la proposition d'architecture Azure/ADLS Gen2. UC08 réutilise les sorties Silver/Gold de l'UC06 dans le conteneur `retail-uc06-spark`, enrichi avec Pandas et Matplotlib.
-
-Reproduction :
-
-```powershell
-docker compose -f .\docker-compose.tp3.yml build spark-uc06
-docker compose -f .\docker-compose.tp3.yml up -d spark-uc06
-docker exec retail-uc06-spark /opt/spark/bin/spark-submit --master local[2] /opt/project/tp4/scripts/tp4_uc08.py
-```

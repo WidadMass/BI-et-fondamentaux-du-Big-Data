@@ -23,4 +23,3 @@ services:
       - ./05-Livrables/J3_Retail_Intelligence/06_UC06/tests:/opt/project/tests:ro
       - ./05-Livrables/J3_Retail_Intelligence/06_UC06/notebooks:/opt/project/notebooks
       - ./05-Livrables/J3_Retail_Intelligence/06_UC06:/opt/project/output
-      - ./05-Livrables/J4_Retail_Intelligence:/opt/project/tp4
