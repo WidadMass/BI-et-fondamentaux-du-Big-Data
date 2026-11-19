@@ -37,6 +37,9 @@ Les analyses métier, limites et recommandations sont présentées dans
 `docs/analyse-metier.md`.
 La comparaison des services et le schéma sont disponibles dans
 `docs/comparaison-services.md` et `docs/architecture.md`.
+La partie complémentaire Power BI est décrite dans `docs/powerbi-dashboard.md`.
+La partie avancée d'industrialisation Azure est décrite dans
+`docs/advanced-azure.md`.
 
 ## Données utilisées
 
